@@ -193,13 +193,13 @@ class DoctypeNode(HamlNode):
         
         if doctype == "":
             content = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
-        if doctype == "Strict":
+        elif doctype == "Strict":
             content = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
-        if doctype == "Frameset":
+        elif doctype == "Frameset":
             content = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">'
-        if doctype == "5":
+        elif doctype == "5":
             content = '<!DOCTYPE html>'
-        if doctype == "1.1":
+        elif doctype == "1.1":
             content = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'
         
         return "%s\n" % content
