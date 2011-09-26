@@ -41,7 +41,7 @@ def create_node(haml_line):
     if stripped_line[0] in ELEMENT_CHARACTERS:
         return ElementNode(haml_line)
     
-    if stripped_line[0:len(CONDITIONAL_COMMENT)] == CONDITIONAL_COMMENT:
+    if stripped_line[0:len(L_COMMENT)] == CONDITIONAL_COMMENT:
         return ConditionalCommentNode(haml_line)
         
     if stripped_line[0] == HTML_COMMENT:
@@ -183,7 +183,7 @@ class ConditionalCommentNode(HamlNode):
         content = content + self.haml[self.haml.index(']')+1:]
         if self.has_internal_nodes():
             content = '\n' + self.render_internal_nodes()
-        return "<!--%s>%s<![endif]-->" % (conditional, content)
+        return "<!--%s>%s<![endif]-->\n" % (conditional, content)
         
 
 class DoctypeNode(HamlNode):
